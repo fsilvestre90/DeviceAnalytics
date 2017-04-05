@@ -1,4 +1,4 @@
-package com.fsilvestre;
+package com.fsilvestre.model;
 
 public class Location {
     private double latitude;
