@@ -1,0 +1,11 @@
+server:
+  port: 3000
+spring:
+  application:
+    name: location-consumer
+  cloud:
+    stream:
+      bindings:
+        input:
+          destination: location-data
+          contentType: application/json

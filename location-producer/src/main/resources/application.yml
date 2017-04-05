@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: location-producer
+  cloud:
+    stream:
+      bindings:
+        output:
+          destination: location-data
+          contentType: application/json
+      kafka:
+        binder:
+          min-partition-count: 4
