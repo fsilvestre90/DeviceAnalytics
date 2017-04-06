@@ -1,42 +1,34 @@
 package com.fsilvestre.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Location {
+
+    @JsonProperty("user_id")
+    private long userId;
     private double latitude;
     private double longitude;
     private long timestamp;
 
-    public Location() {
-    }
-
-    public Location(double latitude, double longitude, long timestamp) {
+    public long getUserId() {
+        return userId;
     }
 
     public double getLatitude() {
         return latitude;
     }
 
-    public void setLatitude(double latitude) {
-        this.latitude = latitude;
-    }
-
     public double getLongitude() {
         return longitude;
-    }
-
-    public void setLongitude(double longitude) {
-        this.longitude = longitude;
     }
 
     public long getTimestamp() {
         return timestamp;
     }
 
-    public void setTimestamp(long timestamp) {
-        this.timestamp = timestamp;
-    }
-
     @Override
     public String toString() {
         return latitude + "/" + longitude + "/" + timestamp + "/";
     }
+
 }

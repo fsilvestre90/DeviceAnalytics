@@ -12,14 +12,13 @@ import org.springframework.stereotype.Component;
 @EnableBinding(Source.class)
 public class RestEventHandler {
 
+    private static Logger logger = LoggerFactory.getLogger(RestEventHandler.class);
     private Source source;
 
     @Autowired
     public RestEventHandler(Source source) {
         this.source = source;
     }
-
-    private static Logger logger = LoggerFactory.getLogger(RestEventHandler.class);
 
     public void locationReceived(Location location) {
         source.output().send(MessageBuilder.withPayload(location).build());
