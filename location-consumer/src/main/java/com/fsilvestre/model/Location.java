@@ -12,14 +12,14 @@ import java.util.UUID;
 @Table("device_activity")
 public class Location implements Serializable {
 
-    @PrimaryKeyColumn(name = "id", ordinal = 1, type = PrimaryKeyType.PARTITIONED)
+    @PrimaryKeyColumn(name = "id", ordinal = 0, type = PrimaryKeyType.PARTITIONED)
     private UUID id;
 
-    @PrimaryKeyColumn(name = "user_id", ordinal = 1, type = PrimaryKeyType.PARTITIONED)
-    @JsonProperty("user_id")
-    private long userId;
+    @PrimaryKeyColumn(name = "device_id", ordinal = 1, type = PrimaryKeyType.PARTITIONED)
+    @JsonProperty("device_id")
+    private String userId;
 
-    @PrimaryKeyColumn(name = "timestamp", ordinal = 2, type = PrimaryKeyType.PARTITIONED)
+    @PrimaryKeyColumn(name = "epoch", ordinal = 2, type = PrimaryKeyType.PARTITIONED)
     private long timestamp;
 
     @Column(value = "latitude")
@@ -31,7 +31,7 @@ public class Location implements Serializable {
     public Location() {
     }
 
-    public long getUserId() {
+    public String getUserId() {
         return userId;
     }
 

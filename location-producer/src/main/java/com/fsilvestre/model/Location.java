@@ -4,13 +4,16 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Location {
 
-    @JsonProperty("user_id")
-    private long userId;
+    @JsonProperty("device_id")
+    private String userId;
+    @JsonProperty("latitude")
     private double latitude;
+    @JsonProperty("longitude")
     private double longitude;
+    @JsonProperty("timestamp")
     private long timestamp;
 
-    public long getUserId() {
+    public String getUserId() {
         return userId;
     }
 
@@ -28,7 +31,7 @@ public class Location {
 
     @Override
     public String toString() {
-        return latitude + "/" + longitude + "/" + timestamp + "/";
+        return userId + "/" + latitude + "/" + longitude + "/" + timestamp + "/";
     }
 
 }
